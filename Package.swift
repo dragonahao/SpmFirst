@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "SwiftLibraryProject",
+
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
@@ -16,14 +17,26 @@ let package = Package(
             ])
 
     ],
+    dependencies: [],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
+        // .target(
+        //     name: "hw2spm",
+        //     dependencies: [],
+
+        //     linkerSettings: [
+        //         .linkedFramework("hw2spm.framework")
+
+        //     ]
+        // ),
+
+        .binaryTarget(name: "hw2spmXCFramework", path: "Sources/Hw2SpmXCFramework.xcframework"),
 
         .target(
             name: "SwiftLibraryFirstSubOC",
             path: "Sources/LibrarySubOC",
-            publicHeadersPath:"../LibrarySubOC/header"
+            publicHeadersPath: "../LibrarySubOC/header"
         ),
         .target(
             name: "SwiftLibraryFirstSubB",
@@ -41,6 +54,7 @@ let package = Package(
                 "SwiftLibraryFirstSubB",
                 "SwiftLibraryFirstSubA",
                 "SwiftLibraryFirstSubOC",
+                "hw2spmXCFramework",
             ],
             path: "Sources/ZZPackage"
         ),
