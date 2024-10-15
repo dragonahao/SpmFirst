@@ -1,5 +1,6 @@
 import Foundation
 import SwiftLibraryFirstSubA
+import SwiftLibraryFirstSubB
 
 @objcMembers
 open class ZZPackage: NSObject {
@@ -8,8 +9,12 @@ open class ZZPackage: NSObject {
     }
 
     public func publicMethod() {
+        print("ZZPackage public method")
         LibraryA().printHello()  // vscode对子包的make sense 不友好，能用但是没提示
         // LibraryB() //没有导入SwiftLibraryFirstSubB无法使用
+        
+        //LibraryA().printHello()
+        SwiftLibraryFirstSubB.LibraryB().printHello() // xcdoe 对子包的make sense 很友好，能用且有提示
     }
 
     open func openMethod() {
