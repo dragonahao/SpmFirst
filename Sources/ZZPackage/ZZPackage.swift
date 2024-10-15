@@ -1,6 +1,8 @@
 import Foundation
 import SwiftLibraryFirstSubA
 import SwiftLibraryFirstSubB
+import SwiftLibraryFirstSubOC
+
 
 @objcMembers
 open class ZZPackage: NSObject {
@@ -15,6 +17,13 @@ open class ZZPackage: NSObject {
         
         //LibraryA().printHello()
         SwiftLibraryFirstSubB.LibraryB().printHello() // xcdoe 对子包的make sense 很友好，能用且有提示
+        
+        // call oc
+        let bean=SwiftLibraryFirstSubOC.LibraryOCBean()
+        bean.fieldName="bean-name"
+        bean.fieldAge=10
+        bean.showOCMethod()
+        LibraryOCBean.showOCStaticMethod()
     }
 
     open func openMethod() {
