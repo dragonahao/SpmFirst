@@ -10,8 +10,9 @@ let package = Package(
         .library(
             name: "SwiftLibraryProject",
             targets: [
-                "subB",
-                "subA",
+                // "SwiftLibraryFirstSubB",
+                // "SwiftLibraryFirstSubA",
+                "SwiftLibraryFirst"
             ])
 
     ],
@@ -19,12 +20,21 @@ let package = Package(
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "subB",
-            path: "Sources/subB"
+            name: "SwiftLibraryFirstSubB",
+            path: "Sources/LibrarySubB"
         ),
         .target(
-            name: "subA",
-            path: "Sources/subA"
+            name: "SwiftLibraryFirstSubA",
+            path: "Sources/LibrarySubA"
+        ),
+        .target(
+            name: "SwiftLibraryFirst",
+            //path: "Sources/LibrarySubA"
+            dependencies: [
+                "SwiftLibraryFirstSubB",
+                "SwiftLibraryFirstSubA",
+            ],
+            path: "Sources/ZZPackage"
         ),
         // .testTarget(
         //     name: "swift-library-projectTests",
