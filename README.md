@@ -54,3 +54,13 @@ xcodebuild -create-xcframework \
     -framework "hw2spm.framework" \
     -output "Hw2SpmXCFramework.xcframework"
 ```
+
+# spm 依赖转圈问题修复
+```shell
+    xcodebuild -resolvePackageDependencies
+
+```
+
+Showing All Errors Only
+Cannot open file handle for file at path: /Users/ahao/Library/Developer/Xcode/DerivedData/LucaJsSDKCoreThirdSwiftClient-abdjdidgknlunhfzgkywgpvfawtn/SourcePackages/checkouts/SpmFirst/Sources/Hw2SpmXCFramework.xcframework/ios-arm64/hw2spm.framework: The file “hw2spm.framework” doesn’t exist.
+
