@@ -85,6 +85,19 @@ bean.name="name";
 # 可以转为spm-target-oc子模块，再通过spm-target调用子模块的方式来调用(绕弯\不便)
 # 真有一个 xcframework文件，可以直接放到 xcode 的 frameworkds中来用(直接\方便)
 ```
+# spm制作xcframework外部也有可达性
+1. spm-target-xcframework-oc的可达性
+>
+>1.外部的oc项目的.h头文件中可以直接使用 #import <frameworkName/someHeader.h>
+>2.外部的swift项目可以通过 frameworkName-Swift-BridgeHeader.h 注册  #import <frameworkName/someHeader.h> 之后使用
+>
+
+2. spm-target-xcframework-swift的可达性
+>
+> 1. 外部oc项目的.h头文件中 不可达，无法操作 (转2 用Swift可达性来操作)
+> 2. 外部swift项目可以通过 import frameworkName 来使用 ，如 let bean=HelloSpm()
+> 
+
 
 # spm 链接系统framework库
 ```shell 
