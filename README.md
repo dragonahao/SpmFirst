@@ -24,6 +24,11 @@ spm first test
 # spm的验证工具
 1. 验证开发环境 swift build -c debug 
 2. 验证生产环境 swift build -c release 
+3. 验证时 swift build 没有直接在xcode上build准确
+```
+    如使用到了spm-xcframework时，导入<hw2spm/HelloWorldBean.h>之后
+    swift build 是无法完成的\失败的，但是 xcode 上build是成功的 ,三方接入后也是可以使用的
+```
 
 # spm的发布工具(最简单)
 1. git / github 等，复用了现有的仓库管理工具
@@ -41,6 +46,7 @@ spm first test
 3. 类没有被@objcMembers修饰， 成员没有被@objc修饰，成员对swift不可互操作(不可读，不可写，不可调用等)
 
 # spm制作xcframework
+framework -> xcframework -> spm-binary-target -> spm-target-oc -> spm-target
 ```shell
 #合并多个framework
 xcodebuild -create-xcframework \
@@ -79,6 +85,25 @@ bean.name="name";
 # 可以转为spm-target-oc子模块，再通过spm-target调用子模块的方式来调用(绕弯\不便)
 # 真有一个 xcframework文件，可以直接放到 xcode 的 frameworkds中来用(直接\方便)
 ```
+
+# spm 链接系统framework库
+```shell 
+targets:[
+    target:[
+        name:"",
+        path:""
+            linkerSettings: [
+                .linkedFramework("系统的framework名称不带后缀"
+                .linkedFramework("SystemConfiguration"),
+                .linkedFramework("sqlite")
+            )
+
+        ]
+    ]
+]
+```
+      
+
 
 
 # spm 依赖转圈问题修复

@@ -2,8 +2,8 @@ import Foundation
 import SwiftLibraryFirstSubA
 import SwiftLibraryFirstSubB
 import SwiftLibraryFirstSubOC
-
-
+import UIKit
+import SystemConfiguration
 
 @objcMembers
 open class ZZPackage: NSObject {
@@ -25,6 +25,9 @@ open class ZZPackage: NSObject {
         bean.fieldAge = 10
         bean.showOCMethod()
         LibraryOCBean.showOCStaticMethod()
+        
+        let vDeprecated=SystemConfiguration.API_TO_BE_DEPRECATED
+        print("ZZPackage vDeprecated is \(vDeprecated)")
     }
 
     open func openMethod() {
@@ -41,6 +44,5 @@ open class ZZPackage: NSObject {
     internal func internalMethod() {
         print("ZZPackage internal method")
     }
-    
 
 }
