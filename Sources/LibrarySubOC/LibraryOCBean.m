@@ -6,7 +6,10 @@
 //
 
 #import "LibraryOCBean.h"
-#import <hw2spm/HelloWorldBean.h>
+#import <hw2spm/HelloWorldBean.h>  //okay
+//#import "hw2spm/HelloWorldBean.h"//okay
+#import <hw2spmswift/hw2spmswift.h>
+ 
 
 @implementation LibraryOCBean
 -(void) showOCMethod{
@@ -21,5 +24,7 @@
     bean.name=@"zhangsan";
     [bean showName];
     [HelloWorldBean showStaticName];
+    
+ 
 }
 @end

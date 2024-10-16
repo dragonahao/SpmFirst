@@ -5,6 +5,8 @@ import SwiftLibraryFirstSubOC
 import UIKit
 import SystemConfiguration
 
+import hw2spmswift
+
 @objcMembers
 open class ZZPackage: NSObject {
     var computedName: String {
@@ -43,6 +45,12 @@ open class ZZPackage: NSObject {
 
     internal func internalMethod() {
         print("ZZPackage internal method")
+    }
+    
+    private func usage_swift_xcframework(){
+        let h=hw2spmswift.HelloSpm()
+        h.sayOpen()
+        h.sayPublic()
     }
 
 }

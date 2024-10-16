@@ -38,10 +38,17 @@ let package = Package(
                 "xcframeworkfiles/Hw2SpmXCFramework.xcframework"
 
         ),
+        .binaryTarget(
+            name: "MyBinarySwift",
+            path:
+                "xcframeworkfiles/Hw2SpmSwiftXCFramework.xcframework"
+
+        ),
         .target(
             name: "MyBinaryClient",
             dependencies: [
-                "MyBinary"
+                "MyBinary",
+               
             ],
             path: "Sources/XCPackage"
 
@@ -49,7 +56,8 @@ let package = Package(
         .target(
             name: "SwiftLibraryFirstSubOC",
             dependencies: [
-                "MyBinary"
+                "MyBinary",
+            
             ],
             path: "Sources/LibrarySubOC",
             publicHeadersPath: "../LibrarySubOC/header"
@@ -72,7 +80,7 @@ let package = Package(
                 "SwiftLibraryFirstSubB",
                 "SwiftLibraryFirstSubA",
                 "SwiftLibraryFirstSubOC",
-
+                "MyBinarySwift",
             ],
             path: "Sources/ZZPackage",
             linkerSettings: [

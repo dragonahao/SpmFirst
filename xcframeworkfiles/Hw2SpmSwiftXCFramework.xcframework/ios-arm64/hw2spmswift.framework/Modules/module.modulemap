@@ -1,0 +1,6 @@
+framework module hw2spmswift {
+  umbrella header "hw2spmswift.h"
+  export *
+
+  module * { export * }
+}
