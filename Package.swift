@@ -31,7 +31,7 @@ let package = Package(
         //     ]
         // ),
 
-        .binaryTarget(name: "hw2spmXCFramework", path: "Sources/Hw2SpmXCFramework.xcframework"),
+        // .binaryTarget(name: "hw2spmXCFramework", path: "Sources/Hw2SpmXCFramework.xcframework"),
 
         .target(
             name: "SwiftLibraryFirstSubOC",
@@ -54,7 +54,7 @@ let package = Package(
                 "SwiftLibraryFirstSubB",
                 "SwiftLibraryFirstSubA",
                 "SwiftLibraryFirstSubOC",
-                "hw2spmXCFramework",
+                // "hw2spmXCFramework",
             ],
             path: "Sources/ZZPackage"
         ),
