@@ -10,6 +10,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "SwiftLibraryProject",
+           
             targets: [
                 // "SwiftLibraryFirstSubB",
                 // "SwiftLibraryFirstSubA",
@@ -17,7 +18,9 @@ let package = Package(
             ])
 
     ],
-    dependencies: [],
+    dependencies: [
+        
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
@@ -31,12 +34,28 @@ let package = Package(
         //     ]
         // ),
 
-        // .binaryTarget(name: "hw2spmXCFramework", path: "Sources/Hw2SpmXCFramework.xcframework"),
+        .binaryTarget(
+            name: "MyBinary",
+            path:
+                "xcframeworkfiles/Hw2SpmXCFramework.xcframework"
+           
+        ),
+        .target(
+            name: "MyBinaryClient",
+            dependencies: [
+                "MyBinary"
+            ],
+            path: "Sources/XCPackage"
 
+        ),
         .target(
             name: "SwiftLibraryFirstSubOC",
+            dependencies:[
+                "MyBinary",
+            ],
             path: "Sources/LibrarySubOC",
             publicHeadersPath: "../LibrarySubOC/header"
+           
         ),
         .target(
             name: "SwiftLibraryFirstSubB",
@@ -51,10 +70,11 @@ let package = Package(
             name: "SwiftLibraryFirst",
             //path: "Sources/LibrarySubA"
             dependencies: [
+               
                 "SwiftLibraryFirstSubB",
                 "SwiftLibraryFirstSubA",
                 "SwiftLibraryFirstSubOC",
-                // "hw2spmXCFramework",
+
             ],
             path: "Sources/ZZPackage"
         ),

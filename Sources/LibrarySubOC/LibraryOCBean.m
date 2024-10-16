@@ -6,6 +6,7 @@
 //
 
 #import "LibraryOCBean.h"
+#import <hw2spm/HelloWorldBean.h>
 
 @implementation LibraryOCBean
 -(void) showOCMethod{
@@ -13,5 +14,12 @@
 }
 +(void) showOCStaticMethod{
     NSLog(@"LibraryOCBean::showOCStaticMethod");
+    
+}
++(void) usage_xcframework{
+    HelloWorldBean* bean = [[HelloWorldBean alloc] init];
+    bean.name=@"zhangsan";
+    [bean showName];
+    [HelloWorldBean showStaticName];
 }
 @end
