@@ -21,6 +21,27 @@
         "children": [
           {
             "kind": "Function",
+            "name": "sayPublic",
+            "printedName": "sayPublic()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@hw2spmswift@objc(cs)HelloSpm(im)sayPublic",
+            "mangledName": "$s11hw2spmswift8HelloSpmC9sayPublicyyF",
+            "moduleName": "hw2spmswift",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "sayOpen",
             "printedName": "sayOpen()",
             "children": [
@@ -35,27 +56,6 @@
             "mangledName": "$s11hw2spmswift8HelloSpmC7sayOpenyyF",
             "moduleName": "hw2spmswift",
             "isOpen": true,
-            "declAttributes": [
-              "AccessControl",
-              "ObjC"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "sayPublic",
-            "printedName": "sayPublic()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@M@hw2spmswift@objc(cs)HelloSpm(im)sayPublic",
-            "mangledName": "$s11hw2spmswift8HelloSpmC9sayPublicyyF",
-            "moduleName": "hw2spmswift",
             "declAttributes": [
               "AccessControl",
               "ObjC"
