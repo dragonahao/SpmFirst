@@ -2,9 +2,8 @@ import Foundation
 import SwiftLibraryFirstSubA
 import SwiftLibraryFirstSubB
 import SwiftLibraryFirstSubOC
-import UIKit
 import SystemConfiguration
-
+import UIKit
 import hw2spmswift
 
 @objcMembers
@@ -27,9 +26,11 @@ open class ZZPackage: NSObject {
         bean.fieldAge = 10
         bean.showOCMethod()
         LibraryOCBean.showOCStaticMethod()
-        
-        let vDeprecated=SystemConfiguration.API_TO_BE_DEPRECATED
+
+        let vDeprecated = SystemConfiguration.API_TO_BE_DEPRECATED
         print("ZZPackage vDeprecated is \(vDeprecated)")
+
+        usage_swift_xcframework()
     }
 
     open func openMethod() {
@@ -46,9 +47,9 @@ open class ZZPackage: NSObject {
     internal func internalMethod() {
         print("ZZPackage internal method")
     }
-    
-    private func usage_swift_xcframework(){
-        let h=hw2spmswift.HelloSpm()
+
+    private func usage_swift_xcframework() {
+        let h = hw2spmswift.HelloSpm()
         h.sayOpen()
         h.sayPublic()
     }
