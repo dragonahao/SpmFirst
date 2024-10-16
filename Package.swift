@@ -47,8 +47,8 @@ let package = Package(
         .target(
             name: "MyBinaryClient",
             dependencies: [
-                "MyBinary",
-               
+                "MyBinary"
+
             ],
             path: "Sources/XCPackage"
 
@@ -56,8 +56,8 @@ let package = Package(
         .target(
             name: "SwiftLibraryFirstSubOC",
             dependencies: [
-                "MyBinary",
-            
+                "MyBinary"
+
             ],
             path: "Sources/LibrarySubOC",
             publicHeadersPath: "../LibrarySubOC/header"
@@ -85,7 +85,7 @@ let package = Package(
             path: "Sources/ZZPackage",
             linkerSettings: [
                 .linkedFramework("UIKit"),
-                .linkedLibrary("SystemConfiguration"),
+                .linkedFramework("SystemConfiguration"),
             ]
         ),
         // .testTarget(
