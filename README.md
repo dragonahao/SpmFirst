@@ -53,7 +53,33 @@ xcodebuild -create-xcframework \
 xcodebuild -create-xcframework \
     -framework "hw2spm.framework" \
     -output "Hw2SpmXCFramework.xcframework"
+
+
+# spm添加xcframework dependencies:["MyBinary"]
+targets:[
+        .binaryTarget(
+            name: "MyBinary",
+            path:
+                "xcframeworkfiles/Hw2SpmXCFramework.xcframework"
+           
+        ),
+]
+
+# Hw2SpmXCFramework.xcframework中文件的使用
+# 如xcframework中包含了一个 hw2spm.framework（使用OC制作而成）
+# hw2spm.framework中导出了 HelloWorldBean.h 文件
+
+# 使用机制 需要在 spm-target-oc子模块中使用才行
+#import <hw2spm/HelloWorldBean.h> 
+HelloWorldBean* bean=[[HelloWorldBean alloc ]init];
+bean.name="name";
+[bean showName];
+
+# 在spm-target-swift中调用，无法直接调用
+# 可以转为spm-target-oc子模块，再通过spm-target调用子模块的方式来调用(绕弯\不便)
+# 真有一个 xcframework文件，可以直接放到 xcode 的 frameworkds中来用(直接\方便)
 ```
+
 
 # spm 依赖转圈问题修复
 ```shell
